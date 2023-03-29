@@ -12,6 +12,7 @@ public class GroundSpawner : MonoBehaviour
 
     void Start()
     {
+        TMPController.firstRun = true;
         for (int i = 0; i < 2; i++)
         {
             SpawnTile();

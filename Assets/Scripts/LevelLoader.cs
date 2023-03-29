@@ -24,5 +24,6 @@ public class LevelLoader : MonoBehaviour
 
         // Zmiana sceny
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        yield return new WaitForSeconds(2);
     }
 }

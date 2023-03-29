@@ -6,6 +6,8 @@ using TMPro;
 
 public class TMPController : MonoBehaviour
 {
+    public static bool firstRun = true;
+
     public static TextMeshProUGUI equationBox;
     public static TextMeshProUGUI scoreboard;
     string activeSceneName;

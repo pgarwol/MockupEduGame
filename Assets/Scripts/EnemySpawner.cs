@@ -98,6 +98,11 @@ public class EnemySpawner : MonoBehaviour
         tmpresultEquationNumber = equations[0][1];
         equations.RemoveAt(0);
 
+        if(TMPController.firstRun){
+            TMPController.changeEquation(EnemySpawner.tmpfirstEquationNumber, EnemySpawner.tmpresultEquationNumber);
+            TMPController.firstRun = false;
+        }
+
 
         // Enemies
         for (int i = 0; i < spawnPoints.Length; i++){
