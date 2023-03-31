@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour {
-    private int numberOfRowsBeforeChange = 5; // wcze�niej 10!
+    private int numberOfRowsBeforeChange = 3; // wcze�niej 10!
 
     void Update() {
-        // Tu nast�puje zmiana sceny na kolejne "dzia�anie"
+        // Tu nastepuje zmiana sceny na kolejne "dzialanie"
         if(TMPController.rowCounter == numberOfRowsBeforeChange) {
             StartCoroutine(LoadNextLevelWithDelay());
             TMPController.rowCounter = 0;

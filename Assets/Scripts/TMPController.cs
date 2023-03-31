@@ -16,11 +16,10 @@ public class TMPController : MonoBehaviour {
     // Czy gracz dopiero zaczął 'rundę'?
     public static bool firstRun = true;
 
-    private string activeSceneName;
+    private static string activeSceneName;
     void Start() {
         activeSceneName = SceneManager.GetActiveScene().name;
-        switch (activeSceneName)
-        {
+        switch (activeSceneName) {
             case "AdditionScene": equationSymbol = "+"; break;
             case "SubtractionScene": equationSymbol = "-"; break;
             case "MultiplicationScene": equationSymbol = "×"; break;
@@ -45,9 +44,27 @@ public class TMPController : MonoBehaviour {
     
     public static void addPoint() {
         score++;
+        switch (activeSceneName) {
+            case "AdditionScene": RunningResults.AdditionScoreUp(); break;
+            case "SubtractionScene": RunningResults.SubtractionScoreUp(); break;
+            case "MultiplicationScene": RunningResults.MultiplicationScoreUp(); break;
+            case "DivisionScene": RunningResults.DivisionScoreUp(); break;
+            default: Debug.Log("Uh"); break;
+        }
     }
 
     public static void substractPoint() {
         score--;
+        switch (activeSceneName) {
+            case "AdditionScene": RunningResults.AdditionScoreDown(); break;
+            case "SubtractionScene": RunningResults.SubtractionScoreDown(); break;
+            case "MultiplicationScene": RunningResults.MultiplicationScoreDown(); break;
+            case "DivisionScene": RunningResults.DivisionScoreDown(); break;
+            default: Debug.Log("Uh"); break;
+        }
+    }
+
+    public static int getScore() {
+        return score;
     }
 }
